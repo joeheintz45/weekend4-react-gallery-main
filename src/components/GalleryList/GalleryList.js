@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+//Renders the Gallery list
 class GalleryList extends Component {
   render() {
     return (
