@@ -64,7 +64,7 @@ class GalleryItem extends Component {
     }
 
     if (this.props.item.likes > 0) {
-      likeCount = <p>{this.props.item.likes} people love this</p>;
+      likeCount = <p>{this.props.item.likes} people love this!</p>;
     }
 
     return (
