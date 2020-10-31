@@ -12,7 +12,7 @@ class App extends Component {
     this.getGallery();
   }
 
-  getGallery() {
+  getGallery = (event) => {
     axios({
       method: 'GET',
       url: '/gallery',
@@ -28,7 +28,7 @@ class App extends Component {
           errorMsg: 'Bad things are happening..',
         });
       });
-  }
+  };
 
   render() {
     return (

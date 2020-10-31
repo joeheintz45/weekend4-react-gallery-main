@@ -5,6 +5,7 @@ import axios from 'axios';
 class GalleryItem extends Component {
   state = {
     flip: false,
+    likes: 0,
   };
 
   handleClick = (event) => {
@@ -20,16 +21,29 @@ class GalleryItem extends Component {
     console.log(this.state.flip);
   };
 
-  getLike() {}
+  // getLike = (event) => {
+  //   axios({
+  //     method: 'GET',
+  //     url: '/gallery',
+  //   })
+  //     .then((response) => {
+  //       this.setState({
+  //         likes: response.data.likes,
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   putLike = (event) => {
+    event.preventDefault();
     axios({
       method: 'PUT',
       url: '/gallery/like/' + this.props.item.id,
     })
       .then((response) => {
-        console.log(response);
-        console.log(this.props.getCall);
+        this.props.getCall();
       })
       .catch((err) => {
         console.log(err);
