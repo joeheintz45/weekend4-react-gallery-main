@@ -20,6 +20,8 @@ class GalleryItem extends Component {
     console.log(this.state.flip);
   };
 
+  getLike() {}
+
   putLike = (event) => {
     axios({
       method: 'PUT',
@@ -27,6 +29,7 @@ class GalleryItem extends Component {
     })
       .then((response) => {
         console.log(response);
+        console.log(this.props.getCall);
       })
       .catch((err) => {
         console.log(err);
@@ -44,6 +47,10 @@ class GalleryItem extends Component {
       galleryItem = (
         <p className="description">{this.props.item.description}</p>
       );
+    }
+
+    if (this.props.item.likes > 0) {
+      likeCount = <p>{this.props.item.likes} people love this</p>;
     }
 
     return (

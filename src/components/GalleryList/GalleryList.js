@@ -8,7 +8,13 @@ class GalleryList extends Component {
       <div>
         <p>Gallery goes here</p>
         {this.props.gallery.map((item, index) => {
-          return <GalleryItem key={item.id} item={item} />;
+          return (
+            <GalleryItem
+              key={item.id}
+              item={item}
+              getCall={this.props.getCall}
+            />
+          );
         })}
       </div>
     );
