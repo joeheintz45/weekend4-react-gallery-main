@@ -1,0 +1,14 @@
+.description {
+  background-color: rgb(224, 224, 224);
+  height: 100px;
+  width: 100px;
+  /* display: inline-block; */
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+}
+
+.container {
+  display: inline-block;
+  margin: 30px;
+}
