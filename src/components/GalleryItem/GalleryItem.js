@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import './GalleryItem.css';
 import axios from 'axios';
 
+// the gallery image or description component and like button with functionality
 class GalleryItem extends Component {
+  // sets the state of flip to false by default
   state = {
     flip: false,
-    likes: 0,
   };
 
+  // function for handling the img click to switch to the description box
   handleClick = (event) => {
     if (this.state.flip === false) {
       this.setState({
@@ -18,24 +20,9 @@ class GalleryItem extends Component {
         flip: false,
       });
     }
-    console.log(this.state.flip);
-  };
+  }; // end handleClick
 
-  // getLike = (event) => {
-  //   axios({
-  //     method: 'GET',
-  //     url: '/gallery',
-  //   })
-  //     .then((response) => {
-  //       this.setState({
-  //         likes: response.data.likes,
-  //       });
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
+  // put function for updating the images like count on the server
   putLike = (event) => {
     event.preventDefault();
     axios({
@@ -48,21 +35,24 @@ class GalleryItem extends Component {
       .catch((err) => {
         console.log(err);
       });
-  };
+  }; // end putLike function
 
+  // render the individual img
   render() {
+    // sets the img to a variable for conditional rendering
     let galleryItem = (
       <img src={this.props.item.path} alt={this.props.item.description}></img>
     );
-
-    let likeCount = <p>No one loves this ;(</p>;
-
+    // checks the state of the flip key and changes it based on its current state
     if (this.state.flip === true) {
       galleryItem = (
         <p className="description">{this.props.item.description}</p>
       );
     }
 
+    // sets the like count message to a default message
+    let likeCount = <p>No one loves this ;(</p>;
+    // updates the like count message after the first click
     if (this.props.item.likes > 0) {
       likeCount = <p>{this.props.item.likes} people love this!</p>;
     }

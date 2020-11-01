@@ -7,6 +7,7 @@ class GalleryList extends Component {
     return (
       <div>
         <p>Gallery goes here</p>
+        {/* iterates through the array and returns each GalleryItem component */}
         {this.props.gallery.map((item, index) => {
           return (
             <GalleryItem
