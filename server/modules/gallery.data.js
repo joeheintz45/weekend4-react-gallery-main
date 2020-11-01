@@ -17,6 +17,18 @@ const galleryItems = [
     description: 'Cute photo of a lamb (aka baby sheep).',
     likes: 0,
   },
+  {
+    id: 4,
+    path: 'images/sheeppig.jpg',
+    description: 'Apparently pigs that look like sheep exist.',
+    likes: 0,
+  },
+  {
+    id: 5,
+    path: 'images/alpaca.webp',
+    description: 'A cool alpaca with a nice haircut.',
+    likes: 0,
+  },
 ];
 
 module.exports = galleryItems;
